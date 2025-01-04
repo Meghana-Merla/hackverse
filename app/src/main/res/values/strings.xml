@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">hackverse14</string>
+    <string name="textview_register_head">Create New Account</string>
+    <string name="textview_register_full_name">Name*</string>
+    <string name="textview_register_mail_id">E-Mail ID*</string>
+    <string name="textview_register_password">Password*</string>
+    <string name="textview_register_confirmation">Confirm Password*</string>
+    <string name="edittext_register_full_name">Full Name</string>
+
+    <string name="edittext_register_mail_id">Mail ID</string>
+    <string name="edittext_register_password">Password</string>
+    <string name="edittext_register_confirmation">Confirm Password</string>
+    <string name="textView_login_head">Welcome back..!!</string>
+    <string name="textView_login_instruction">Please log in to continue</string>
+    <string name="textView_login_account">Do not have an account?</string>
+    <string name="textView_login_register">Register</string>
+    <string name="textView_login_forgot">Forgot your password?"</string>
+    <string name="textView_login_reset">Click here to reset</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Profile</string>
+    <string name="loading">Loading...</string>
+</resources>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/light_grey"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateHackathonActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="vertical"
+                android:background="@color/lavender">
+
+                <TextView
+                    android:id="@+id/textView_change_pwd_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/white"
+                    android:text="Create a Hackathon"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="-50dp"
+                android:background="@drawable/border"
+                android:padding="15dp">
+
+
+                <RelativeLayout
+                    android:id="@+id/RL_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border">
+
+
+                    <TextView
+                        android:id="@+id/textView_cr_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="   Hackathon Name*" />
+
+                    <View
+                        android:id="@+id/divider_cr_name"
+                        android:layout_width="275dp"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/textView_cr_name"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/darker_gray" />
+
+                    <EditText
+                        android:id="@+id/editText_cr_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_cr_name"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+
+                        android:background="@android:color/transparent"
+                        android:hint="   Enter Hackathon name"
+                        android:inputType="textPersonName"
+                        android:padding="6dp"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RL_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@id/RL_name"
+                    android:background="@drawable/border">
+
+
+                    <TextView
+                        android:id="@+id/textView_cr_des"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="   Hackathon Description*" />
+
+                    <View
+                        android:id="@+id/divider_cr_des"
+                        android:layout_width="275dp"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/textView_cr_des"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/darker_gray" />
+
+                    <EditText
+                        android:id="@+id/editText_cr_des"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_cr_des"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+
+                        android:background="@android:color/transparent"
+                        android:hint="   Enter Description of Hackathon"
+                        android:inputType="textPersonName"
+                        android:padding="6dp"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RL_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@id/RL_description"
+                    android:background="@drawable/border">
+
+
+                    <TextView
+                        android:id="@+id/textView_cr_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="   Hackathon Date*" />
+
+                    <View
+                        android:id="@+id/divider_cr_date"
+                        android:layout_width="275dp"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/textView_cr_date"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/darker_gray" />
+
+                    <EditText
+                        android:id="@+id/editText_cr_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_cr_date"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@android:color/transparent"
+                        android:hint="   Enter Date of Hackathon"
+                        android:inputType="none"
+                        android:focusable="false"
+                        android:padding="6dp"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RL_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@id/RL_date"
+                    android:background="@drawable/border">
+
+
+                    <TextView
+                        android:id="@+id/textView_cr_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="   Time of Hackathon*" />
+
+                    <View
+                        android:id="@+id/divider_cr_time"
+                        android:layout_width="275dp"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/textView_cr_time"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/darker_gray" />
+
+                    <EditText
+                        android:id="@+id/editText_cr_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_cr_time"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+
+                        android:background="@android:color/transparent"
+                        android:hint="   Enter Time of Hackathon"
+                        android:inputType="time"
+                        android:padding="6dp"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RL_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@id/RL_time"
+                    android:background="@drawable/border">
+
+
+                    <TextView
+                        android:id="@+id/textView_cr_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="   Venue of Hackathon*" />
+
+                    <View
+                        android:id="@+id/divider_cr_address"
+                        android:layout_width="275dp"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/textView_cr_address"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/darker_gray" />
+
+                    <EditText
+                        android:id="@+id/editText_cr_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_cr_address"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+
+                        android:background="@android:color/transparent"
+                        android:hint="   Enter Venue of Hackathon"
+                        android:inputType="textPersonName"
+                        android:padding="6dp"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RL_money"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@id/RL_address"
+                    android:background="@drawable/border">
+
+
+                    <TextView
+                        android:id="@+id/textView_cr_money"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="   Venue of Hackathon*" />
+
+                    <View
+                        android:id="@+id/divider_cr_money"
+                        android:layout_width="275dp"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/textView_cr_money"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/darker_gray" />
+
+                    <EditText
+                        android:id="@+id/editText_cr_money"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_cr_money"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+
+                        android:background="@android:color/transparent"
+                        android:hint="   Enter Prize Money"
+                        android:inputType="number"
+                        android:padding="6dp"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RL_dl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@id/RL_money"
+                    android:background="@drawable/border">
+
+
+                    <TextView
+                        android:id="@+id/textView_cr_dl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:text="   Deadline of Hackathon*" />
+
+                    <View
+                        android:id="@+id/divider_cr_dl"
+                        android:layout_width="275dp"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/textView_cr_dl"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/darker_gray" />
+
+                    <EditText
+                        android:id="@+id/editText_cr_dl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_cr_dl"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@android:color/transparent"
+                        android:hint="   Enter Deadline of Hackathon"
+                        android:inputType="none"
+                        android:focusable="false"
+                        android:padding="6dp"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/cr_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/RL_dl"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginRight="50dp"
+                    android:background="@color/black"
+                    android:text="Create Hackathon" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:elevation="10dp"
+                    android:visibility="gone">
+
+                </ProgressBar>
+
+            </RelativeLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
