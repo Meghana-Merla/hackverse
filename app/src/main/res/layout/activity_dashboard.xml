@@ -42,33 +42,39 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewActiveHackathons"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:layout_below="@id/textviewone" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textviewtwo"
-                android:layout_below="@id/textviewone"
+                android:layout_below="@id/recyclerViewActiveHackathons"
                 android:text="Registration Completed Hackathons"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewRegistrationCompletedHackathons"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:layout_below="@id/textviewtwo" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textviewthree"
-                android:layout_below="@id/textviewtwo"
+                android:layout_below="@id/recyclerViewRegistrationCompletedHackathons"
                 android:text="Completed Hackathons"
                 android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewCompletedHackathons"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_below="@id/textviewthree" />
 
             </RelativeLayout>
 

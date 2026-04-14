@@ -1,4 +1,4 @@
-package com.example.hackverse14
+package com.example.hackverse
 
 import android.app.NotificationChannel
 import android.app.NotificationManager

@@ -1,9 +1,11 @@
-package com.example.hackverse14
+package com.example.hackverse
 
 import android.os.Bundle
+import android.text.InputType
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -14,6 +16,7 @@ class UpdatePwdActivity : AppCompatActivity() {
     private lateinit var newPasswordEditText: EditText
     private lateinit var confirmPasswordEditText: EditText
     private lateinit var updateButton: Button
+    private lateinit var imageViewShowHideConfirmPwd: ImageView
 
     private lateinit var firebaseAuth: FirebaseAuth
 
@@ -27,7 +30,9 @@ class UpdatePwdActivity : AppCompatActivity() {
         // Initialize UI elements
         currentPasswordEditText = findViewById(R.id.editText_change_pwd_current)
         newPasswordEditText = findViewById(R.id.editText_change_pwd_new)
+        confirmPasswordEditText = findViewById(R.id.  editText_change_pwd_confirm)
         updateButton = findViewById(R.id.button_update_pwd)
+        imageViewShowHideConfirmPwd = findViewById(R.id.imageView_show_hide_confirm_pwd)
 
         updateButton.setOnClickListener {
             val currentPassword = currentPasswordEditText.text.toString()
@@ -37,6 +42,11 @@ class UpdatePwdActivity : AppCompatActivity() {
             if (validateInputs(currentPassword, newPassword, confirmPassword)) {
                 updatePassword(newPassword)
             }
+        }
+
+        // Handle show/hide confirm password
+        imageViewShowHideConfirmPwd.setOnClickListener {
+            togglePasswordVisibility(confirmPasswordEditText, imageViewShowHideConfirmPwd)
         }
     }
 
@@ -79,5 +89,19 @@ class UpdatePwdActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun togglePasswordVisibility(editText: EditText, imageView: ImageView) {
+        if (editText.inputType == InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD) {
+            // Show password
+            editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            imageView.setImageResource(R.drawable.ic_hide_pwd) // Replace with your hide icon
+        } else {
+            // Hide password
+            editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            imageView.setImageResource(R.drawable.ic_show_pwd) // Replace with your show icon
+        }
+        // Move cursor to the end
+        editText.setSelection(editText.text.length)
     }
 }

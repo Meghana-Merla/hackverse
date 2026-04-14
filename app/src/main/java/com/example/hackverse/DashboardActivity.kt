@@ -1,13 +1,14 @@
-package com.example.hackverse14
+package com.example.hackverse
 
-import Hackathon
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.hackverse14.databinding.ActivityDashboardBinding
-import com.example.hackverse14.databinding.ItemHackathonBinding
+import com.example.hackverse.databinding.ActivityDashboardBinding
+import com.example.hackverse.databinding.ItemHackathonBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import java.text.ParseException
@@ -49,6 +50,7 @@ class DashboardActivity : AppCompatActivity() {
 
                 for (document in documents) {
                     val hackathon = document.toObject(Hackathon::class.java)
+                    hackathon.id = document.id
                     val hackathonDate = parseDate(hackathon.date) // Parses date string to timestamp
                     val deadlineDate = parseDate(hackathon.deadline)
 
@@ -144,6 +146,55 @@ class DashboardActivity : AppCompatActivity() {
         val intent = Intent(this, activity)
         startActivity(intent)
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+    }
+
+    fun registerForHackathon(hackathon: Hackathon) {
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user == null) {
+            Toast.makeText(this, "Please log in to register", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Check if registration is still open
+        val currentDate = System.currentTimeMillis()
+        val deadlineDate = parseDate(hackathon.deadline)
+        if (currentDate > deadlineDate) {
+            Toast.makeText(this, "Registration deadline has passed", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Check if already registered (simple check, can be improved)
+        db.collection("registrations")
+            .whereEqualTo("userId", user.uid)
+            .whereEqualTo("hackathonId", hackathon.id)
+            .get()
+            .addOnSuccessListener { documents ->
+                if (!documents.isEmpty) {
+                    Toast.makeText(this, "Already registered for this hackathon", Toast.LENGTH_SHORT).show()
+                    return@addOnSuccessListener
+                }
+
+                // Register
+                val registrationData = hashMapOf(
+                    "userId" to user.uid,
+                    "hackathonId" to hackathon.id,
+                    "hackathonTitle" to hackathon.title,
+                    "hackathonDate" to hackathon.date,
+                    "registeredAt" to System.currentTimeMillis()
+                )
+
+                db.collection("registrations")
+                    .add(registrationData)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Successfully registered!", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener { e ->
+                        Toast.makeText(this, "Registration failed: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Error checking registration: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 }
 

@@ -1,3 +1,5 @@
+package com.example.hackverse
+
 data class Hackathon(
     val title: String = "",
     val description: String = "",
@@ -5,5 +7,6 @@ data class Hackathon(
     val deadline: String = "",
     val prizeMoney: String = "",
     val location: String = "",
-    val time: String = ""
+    val time: String = "",
+    var id: String = ""
 )

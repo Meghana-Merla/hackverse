@@ -1,10 +1,9 @@
-package com.example.hackverse14
+package com.example.hackverse
 
-import Hackathon
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hackverse14.databinding.ItemHackathonBinding
+import com.example.hackverse.databinding.ItemHackathonBinding
 
 class HackathonAdapter : RecyclerView.Adapter<HackathonAdapter.HackathonViewHolder>() {
     private val hackathonList = mutableListOf<Hackathon>()
@@ -38,6 +37,10 @@ class HackathonAdapter : RecyclerView.Adapter<HackathonAdapter.HackathonViewHold
             binding.textViewPrizeMoney.text = hackathon.prizeMoney
             binding.textViewLocation.text = hackathon.location
             binding.textViewTime.text = hackathon.time
+
+            binding.buttonRegister.setOnClickListener {
+                (binding.root.context as DashboardActivity).registerForHackathon(hackathon)
+            }
         }
     }
 }

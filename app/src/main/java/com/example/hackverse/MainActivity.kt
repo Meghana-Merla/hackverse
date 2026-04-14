@@ -1,4 +1,4 @@
-package com.example.hackverse14
+package com.example.hackverse
 
 import android.content.Intent
 import android.content.SharedPreferences

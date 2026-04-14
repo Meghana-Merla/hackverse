@@ -6,12 +6,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.hackverse14"
+    namespace = "com.example.hackverse"
     compileSdk = 35
     buildToolsVersion = "35.0.0"
 
     defaultConfig {
-        applicationId = "com.example.hackverse14"
+        applicationId = "com.example.hackverse"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

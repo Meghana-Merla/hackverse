@@ -1,4 +1,4 @@
-package com.example.hackverse14
+package com.example.hackverse
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -90,17 +90,17 @@ class CreateHackathonActivity : AppCompatActivity() {
 
         // Prepare data to send to Firestore
         val hackathonData = hashMapOf(
-            "name" to name,
+            "title" to name,
             "description" to description,
             "date" to date,
             "time" to time,
-            "venue" to venue,
+            "location" to venue,
             "prizeMoney" to prizeMoney,
             "deadline" to deadline
         )
 
-        // Add data to Firestore under the "Hackathons" collection
-        firestore.collection("Hackathons")
+        // Add data to Firestore under the "hackathons" collection
+        firestore.collection("hackathons")
             .add(hackathonData)
             .addOnSuccessListener {
                 progressBar.visibility = View.GONE

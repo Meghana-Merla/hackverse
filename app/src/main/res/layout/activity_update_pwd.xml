@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/light_grey"
-        android:orientation="vertical"
+        android:fillViewport="true"
         tools:context=".UpdatePwdActivity">
 
         <LinearLayout
@@ -169,11 +169,68 @@
                         android:layout_marginEnd="10dp" />
                 </RelativeLayout>
 
+                <RelativeLayout
+                    android:id="@+id/RL_confirm_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@id/RL_new_pwd"
+                    android:background="@drawable/border">
+
+                    <ImageView
+                        android:id="@+id/imageViewConfirmPwd"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_pwd_bw" />
+
+                    <TextView
+                        android:id="@+id/textView_change_pwd_confirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/imageViewConfirmPwd"
+                        android:padding="6dp"
+                        android:text="Confirm Password*" />
+
+                    <View
+                        android:id="@+id/divider_confirm_pwd"
+                        android:layout_width="250dp"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/textView_change_pwd_confirm"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/darker_gray" />
+
+                    <EditText
+                        android:id="@+id/editText_change_pwd_confirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textView_change_pwd_confirm"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@id/imageViewConfirmPwd"
+                        android:background="@android:color/transparent"
+                        android:hint="confirm your new password"
+                        android:inputType="textPassword"
+                        android:padding="6dp"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView_show_hide_confirm_pwd"
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_below="@id/textView_change_pwd_confirm"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp" />
+                </RelativeLayout>
+
                 <Button
                     android:id="@+id/button_update_pwd"
                     android:layout_width="190dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/RL_new_pwd"
+                    android:layout_below="@id/RL_confirm_pwd"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="30dp"
                     android:text="Update Password" />

@@ -1,4 +1,4 @@
-package com.example.hackverse14
+package com.example.hackverse
 
 import android.os.Bundle
 import android.view.View
